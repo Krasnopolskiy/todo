@@ -13,18 +13,11 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // More explicit checkout configuration
-                checkout([
-                    $class: 'GitSCM',
-                    branches: [[name: '*/main']],
-                    extensions: [],
-                    userRemoteConfigs: [[
-                        url: 'https://github.com/Krasnopolskiy/todo.git'
-                    ]]
-                ])
+                sh 'git init'
+                checkout scm
             }
         }
-        
+
         stage('Install Dependencies') {
             steps {
                 sh 'npm ci || npm install'
