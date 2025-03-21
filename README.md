@@ -1,4 +1,4 @@
-# DevOps TODO
+# DevOps TODO by RedField Tech
 
 Sample todo list application for DevOps course
 
