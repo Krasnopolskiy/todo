@@ -13,7 +13,8 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                checkout scm
+                git url: 'http://gogs:3000/owner/todo.git',
+                    credentialsId: 'a7345ab7-808a-4b24-ad99-1af417c51aac'
             }
         }
         
@@ -37,13 +38,7 @@ pipeline {
         
         stage('Build Docker Image') {
             steps {
-                // Placeholder for Docker build step
                 echo 'Building Docker image (placeholder)'
-                
-                // Uncomment and modify this when you're ready to implement Docker build
-                // sh '''
-                //     docker build -t devops-todo:${BUILD_NUMBER} .
-                // '''
             }
         }
     }
