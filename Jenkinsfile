@@ -13,8 +13,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git url: 'http://gogs:3000/owner/todo.git',
-                    credentialsId: 'a7345ab7-808a-4b24-ad99-1af417c51aac'
+                checkout scm
             }
         }
         
