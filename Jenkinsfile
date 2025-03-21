@@ -1,14 +1,13 @@
 pipeline {
-    environment {
-        BASE_IMAGE = 'node:18-alpine'
-        NODE_ENV = 'production'
-    }
-
     agent {
         docker {
-            image "$BASE_IMAGE"
+            image 'node:18-alpine'
             reuseNode true
         }
+    }
+
+    environment {
+        NODE_ENV = 'production'
     }
     
     stages {
